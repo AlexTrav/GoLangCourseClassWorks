@@ -87,6 +87,7 @@ func (*MyType) Ptr() {}
 
 type Saver interface {
 	Save() error
+	IsSaved() bool
 }
 
 type Config struct {
@@ -94,11 +95,17 @@ type Config struct {
 	Port     int
 	User     string
 	Password string
+	Saved    bool
 }
 
 func (c Config) Save() error {
-	fmt.Println("saved to disk")
+	fmt.Println(fmt.Sprintf("%s:%s@%s:%d", c.User, c.Password, c.Host, c.Port))
+	c.Saved = true
 	return nil
+}
+
+func (c Config) IsSaved() bool {
+	return c.Saved
 }
 
 func main() {
@@ -151,7 +158,7 @@ func main() {
 	var _ P = &MyType{} // Исправлено c var _ P = MyType
 	var _ P = &MyType{}
 
-	var dbConfig Saver = Config{
+	var dbConfig Saver = &Config{
 		Host:     "127.0.0.1",
 		Port:     3306,
 		User:     "root",
@@ -163,4 +170,5 @@ func main() {
 		fmt.Println(err)
 	}
 
+	fmt.Println(dbConfig.IsSaved())
 }
