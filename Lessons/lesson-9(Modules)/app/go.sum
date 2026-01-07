@@ -1,0 +1,4 @@
+github.com/AlexTrav/greeting v1.0.0 h1:Yl4wDOixxsxxneqq3Ntp5TOtBsf/X7E4RUJHE8LXzDs=
+github.com/AlexTrav/greeting v1.0.0/go.mod h1:5GClLpEd+5OXq2DXdDsmnZyUQFL5WQZl6rGWjpAF5ow=
+github.com/google/uuid v1.6.0 h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=
+github.com/google/uuid v1.6.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
